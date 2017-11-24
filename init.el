@@ -3,6 +3,9 @@
 ;;; This file bootstraps the configuration, which is divided into
 ;;; a number of other files.
 
+;; set LC_CTYPE env
+(setenv "LC_CTYPE" "zh_CN.UTF-8")
+
 (let ((minver "24.3"))
   (when (version< emacs-version minver)
     (error "Your Emacs is too old -- this config requires v%s or higher" minver)))
@@ -75,7 +78,7 @@
 (require 'init-whitespace)
 
 (require 'init-vc)
-(require 'init-darcs)
+;;(require 'init-darcs)
 (require 'init-git)
 (require 'init-github)
 
@@ -86,9 +89,9 @@
 (require 'init-textile)
 (require 'init-markdown)
 (require 'init-csv)
-(require 'init-erlang)
+;;(require 'init-erlang)
 (require 'init-javascript)
-(require 'init-php)
+;;(require 'init-php)
 (require 'init-org)
 (require 'init-nxml)
 (require 'init-html)
@@ -98,8 +101,8 @@
 (require 'init-python-mode)
 (require 'init-haskell)
 (require 'init-elm)
-(require 'init-ruby-mode)
-(require 'init-rails)
+;;(require 'init-ruby-mode)
+;;(require 'init-rails)
 (require 'init-sql)
 (require 'init-rust)
 (require 'init-toml)
@@ -150,8 +153,8 @@
 ;;----------------------------------------------------------------------------
 ;; Allow users to provide an optional "init-local" containing personal settings
 ;;----------------------------------------------------------------------------
+(require 'init-pyim)         ;; set default input method to pyim
 (require 'init-local nil t)
-
 
 ;;----------------------------------------------------------------------------
 ;; Locales (setting them earlier in this file doesn't work in X)
